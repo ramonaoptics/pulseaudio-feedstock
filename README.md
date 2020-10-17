@@ -5,11 +5,11 @@ Home: https://www.freedesktop.org/wiki/Software/PulseAudio/
 
 Package license: LGPL-2.1-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pulseaudio-feedstock/blob/master/LICENSE.txt)
 
 Summary: A networked sound server
 
-
+Documentation: https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/
 
 Current build status
 ====================
