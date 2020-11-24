@@ -1,5 +1,5 @@
 {% set name = "pulseaudio" %}
-{% set version = "13.0" %}
+{% set version = "14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-{{ version }}.tar.xz
-  sha256: 961b23ca1acfd28f2bc87414c27bb40e12436efcf2158d29721b1e89f3f28057
+  sha256: a834775d9382b055504e5ee7625dc50768daac29329531deb6597bf05e06c261
 
 build:
-  number: 3
-  skip: True  # [not linux]
+  number: 0
+  skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('pulseaudio', max_pin='x.x') }}
 
@@ -67,7 +67,7 @@ about:
   license: LGPL-2.1-or-later
   license_family: GPL
   license_file: LGPL
-  summary: 'A networked sound server'
+  summary: A networked sound server
   doc_url: https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/
 
 extra:
