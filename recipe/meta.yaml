@@ -42,7 +42,6 @@ requirements:
     # Gconf 2.0 (optional as of 0.9.12)
     - dbus >=1.4.12
     - fftw >=3.0
-    - orc >=0.4.9
     # libgdbm (mandatory from 0.9.11 to 0.9.15, optional as of 0.9.16)
     # libtdb (optional as of 0.9.16)
     - check
