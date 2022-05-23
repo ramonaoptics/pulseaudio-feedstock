@@ -60,6 +60,7 @@ requirements:
     # libbluetooth (optional)
     - perl-xml-parser
     - libiconv
+    - openssl
   run:
     - libtool >=2.4
 
