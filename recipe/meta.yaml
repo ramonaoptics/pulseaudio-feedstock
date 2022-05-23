@@ -23,15 +23,22 @@ requirements:
     - make
     - pkg-config
   host:
+    - alsa-lib
     - alsa-lib >=1.0.19
+    - libsndfile
     - libsndfile >=1.0.18
+    - libatomic_ops
     - libatomic_ops >=1.2
     - speex
+    - libtool
     - libtool >=2.4
+    - json-c
     - json-c >=0.11
+    - gettext
     - gettext >=0.18.1
     # X11 (optional)
     - libcap
+    - glib
     - glib >=2.0
     # GTK+ 3.0 (optional)
     # Avahi (optional)
@@ -40,7 +47,9 @@ requirements:
     # tcpwrap (optional)
     # lirc (optional)
     # Gconf 2.0 (optional as of 0.9.12)
+    - dbus
     - dbus >=1.4.12
+    - fftw
     - fftw >=3.0
     # libgdbm (mandatory from 0.9.11 to 0.9.15, optional as of 0.9.16)
     # libtdb (optional as of 0.9.16)
