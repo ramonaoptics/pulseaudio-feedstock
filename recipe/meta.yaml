@@ -62,8 +62,6 @@ requirements:
     - libiconv
   run:
     - libtool >=2.4
-    - jack
-    - libiconv
 
 
 test:
