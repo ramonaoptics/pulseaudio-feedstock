@@ -61,6 +61,7 @@ requirements:
     - perl-xml-parser
     - libiconv
     - openssl
+    - libudev
   run:
     - libtool >=2.4
 
