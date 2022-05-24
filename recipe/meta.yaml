@@ -29,13 +29,8 @@ requirements:
     - libsndfile >=1.0.18
     - libatomic_ops
     - libatomic_ops >=1.2
-    - speex
     - libtool
     - libtool >=2.4
-    - json-c
-    - json-c >=0.11
-    - gettext
-    - gettext >=0.18.1
     # X11 (optional)
     - libcap
     - glib
