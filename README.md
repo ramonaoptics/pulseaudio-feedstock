@@ -186,5 +186,6 @@ Feedstock Maintainers
 =====================
 
 * [@andfoy](https://github.com/andfoy/)
+* [@ryanvolz](https://github.com/ryanvolz/)
 * [@scopatz](https://github.com/scopatz/)
 

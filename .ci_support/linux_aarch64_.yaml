@@ -26,8 +26,6 @@ fftw:
 - '3'
 glib:
 - '2'
-json_c:
-- '0.16'
 libiconv:
 - '1.16'
 openssl:
@@ -37,8 +35,6 @@ pin_run_as_build:
     max_pin: x
   fftw:
     max_pin: x
-  json-c:
-    max_pin: x.x
   libiconv:
     max_pin: x.x
 target_platform:
