@@ -2,6 +2,7 @@
 
 NOCONFIGURE=1 ./bootstrap.sh
 ./configure --prefix=${PREFIX} \
+  --with-udev-rules-dir=${PREFIX}/lib/udev/rules.d \
   --disable-systemd-daemon \
   --disable-systemd-login \
   --disable-systemd-login \
