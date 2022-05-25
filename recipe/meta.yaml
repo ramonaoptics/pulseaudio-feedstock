@@ -10,7 +10,7 @@ source:
   sha256: a834775d9382b055504e5ee7625dc50768daac29329531deb6597bf05e06c261
 
 build:
-  number: 5
+  number: 6
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('pulseaudio', max_pin='x.x') }}
@@ -23,15 +23,17 @@ requirements:
     - make
     - pkg-config
   host:
+    - alsa-lib
     - alsa-lib >=1.0.19
+    - libsndfile
     - libsndfile >=1.0.18
+    - libatomic_ops
     - libatomic_ops >=1.2
-    - speex
+    - libtool
     - libtool >=2.4
-    - json-c >=0.11
-    - gettext >=0.18.1
     # X11 (optional)
     - libcap
+    - glib
     - glib >=2.0
     # GTK+ 3.0 (optional)
     # Avahi (optional)
@@ -40,7 +42,9 @@ requirements:
     # tcpwrap (optional)
     # lirc (optional)
     # Gconf 2.0 (optional as of 0.9.12)
+    - dbus
     - dbus >=1.4.12
+    - fftw
     - fftw >=3.0
     # libgdbm (mandatory from 0.9.11 to 0.9.15, optional as of 0.9.16)
     # libtdb (optional as of 0.9.16)
@@ -51,10 +55,10 @@ requirements:
     # libbluetooth (optional)
     - perl-xml-parser
     - libiconv
+    - openssl
+    - libudev
   run:
     - libtool >=2.4
-    - jack
-    - libiconv
 
 
 test:
@@ -72,4 +76,5 @@ about:
 extra:
   recipe-maintainers:
     - andfoy
+    - ryanvolz
     - scopatz
