@@ -14,56 +14,67 @@ build:
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('pulseaudio', max_pin='x.x') }}
+  ignore_run_exports_from:
+    - {{ compiler('cxx') }}
+    - zlib
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - gstreamer-orc
     - m4
-    - make
+    - meson
+    - ninja
+    - perl-xml-parser
     - pkg-config
   host:
     - alsa-lib
-    - alsa-lib >=1.0.19
-    - libsndfile
-    - libsndfile >=1.0.18
-    - libatomic_ops
-    - libatomic_ops >=1.2
-    - libtool
-    - libtool >=2.4
-    # X11 (optional)
-    - libcap
-    - glib
-    - glib >=2.0
-    # GTK+ 3.0 (optional)
-    # Avahi (optional)
-    - jack
-    # libasyncns (optional)
-    # tcpwrap (optional)
-    # lirc (optional)
-    # Gconf 2.0 (optional as of 0.9.12)
+    - alsa-lib >=1.0.24
+    - check
     - dbus
     - dbus >=1.4.12
     - fftw
     - fftw >=3.0
-    # libgdbm (mandatory from 0.9.11 to 0.9.15, optional as of 0.9.16)
-    # libtdb (optional as of 0.9.16)
-    - check
-    # sbc (>= 1.0, optional)
-    # libsystemd-login (optional)
-    # libsystemd-journal (optional)
-    # libbluetooth (optional)
-    - perl-xml-parser
-    - libiconv
-    - openssl
-    - libudev
-  run:
+    - glib
+    - glib >=2.28.0
+    - gstreamer-orc
+    - jack
+    - libatomic_ops
+    - libatomic_ops >=1.2
+    - libcap
+    - libsndfile
+    - libsndfile >=1.0.20
+    - libsystemd
+    - libtool
     - libtool >=2.4
-
+    - libudev
+    - openssl
+    - zlib
+  run:
+    - {{ pin_compatible('gstreamer-orc', max_pin='x.x') }}
+    - {{ pin_compatible('libtool', max_pin='x') }}
 
 test:
+  requires:
+    - pkg-config
   commands:
+    - test -f ${PREFIX}/include/pulse/version.h
     - test -f ${PREFIX}/lib/libpulse.so
+    - test -f ${PREFIX}/lib/pkgconfig/libpulse.pc
+    - test -f `pkg-config --variable=modlibexecdir --dont-define-prefix libpulse`/libprotocol-native.so
+    - pa-info
+    - pacat --help
+    - pacmd --help
+    - pactl --help
+    - padsp -h
+    - pamon --version
+    - paplay --version
+    - parec --version
+    - parecord --version
+    - pasuspender --help
+    - pulseaudio --help
+
 
 about:
   home: https://www.freedesktop.org/wiki/Software/PulseAudio/
