@@ -26,8 +26,6 @@ fftw:
 - '3'
 glib:
 - '2'
-libiconv:
-- '1'
 libsndfile:
 - '1.1'
 openssl:
@@ -37,3 +35,5 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+zlib:
+- '1.2'
