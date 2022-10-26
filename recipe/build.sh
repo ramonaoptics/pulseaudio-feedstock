@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# need to link with librt for sysroot_linux-64 < 2.17 for clock_gettime
+export LDFLAGS="$LDFLAGS -lrt"
+
 meson_config_args=(
     --buildtype=release
     -D libdir=lib
