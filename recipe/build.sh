@@ -19,5 +19,7 @@ meson setup buildconda \
     "${meson_config_args[@]}" \
     || (cat buildconda/meson-logs/meson-log.txt; false)
 meson compile -v -C buildconda -j ${CPU_COUNT}
-meson test -C buildconda --print-errorlogs --timeout-multiplier 10 --num-processes ${CPU_COUNT}
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
+    meson test -C buildconda --print-errorlogs --timeout-multiplier 10 --num-processes ${CPU_COUNT}
+fi
 meson install -C buildconda --no-rebuild
