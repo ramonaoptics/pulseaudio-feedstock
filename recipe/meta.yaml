@@ -10,6 +10,7 @@ source:
   sha256: 8eef32ce91d47979f95fd9a935e738cd7eb7463430dabc72863251751e504ae4
   patches:
     - 0001-pulsecore-static_assert-_Static_assert-for-glibc-2.1.patch
+    - 0002-tests-Skip-tests-that-fail-for-release-build-when-pa.patch
 
 build:
   number: 0
